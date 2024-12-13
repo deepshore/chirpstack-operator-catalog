@@ -6,10 +6,7 @@ DOCKER_IMAGE="${REGISTRY}/${CATALOG_NAME}:latest"
 rm -fr "${CATALOG_NAME}"
 rm "${CATALOG_NAME}.Dockerfile"
 
-{
-  test ./linux-amd64-opm ||
-  wget https://github.com/operator-framework/operator-registry/releases/download/v1.48.0/linux-amd64-opm
-} &&
+wget https://github.com/operator-framework/operator-registry/releases/download/v1.48.0/linux-amd64-opm &&
 chmod +x linux-amd64-opm &&
 mkdir -p "${CATALOG_NAME}" &&
 ./linux-amd64-opm alpha render-template semver -o yaml < "${TEMPLATE_FILE}" > "${CATALOG_NAME}/${CATALOG_FILE}" &&

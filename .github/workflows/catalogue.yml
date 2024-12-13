@@ -1,0 +1,24 @@
+name: Catalogue
+
+env:
+  MINIKUBE_CPUS: 4
+  MINKUBE_MEM: 4g
+
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  catalogue:
+    runs-on: ubuntu-latest
+    permissions: write-all
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Log in to registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build catalog image
+        run: make build-catalog-image
