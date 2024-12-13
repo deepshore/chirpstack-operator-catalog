@@ -6,4 +6,5 @@ Stable:
 Fast:
   Bundles: []
 Candidate:
-  Bundles: []
+  Bundles:
+    - Image: ghcr.io/deepshore/chirpstack-operator-bundle:v0.3.1
