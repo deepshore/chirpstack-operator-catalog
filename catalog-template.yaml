@@ -9,3 +9,4 @@ Candidate:
   Bundles:
     - Image: ghcr.io/deepshore/chirpstack-operator-bundle:v0.3.1
     - Image: ghcr.io/deepshore/chirpstack-operator-bundle:v0.3.2
+    - Image: ghcr.io/deepshore/chirpstack-operator-bundle:v0.4.0
